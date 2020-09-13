@@ -187,7 +187,7 @@ function mle_solve(config::MLEConfig; kwargs...)
 
     function objective!(x)
         parameters[to_solve] = x
-        dist = config.distribution(parameters...; check_args=true)
+        dist = config.distribution(parameters...)
 
         -loglikelihood(dist, config.data)
     end
